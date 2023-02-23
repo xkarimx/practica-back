@@ -1,12 +1,14 @@
 import express from 'express'
+import 'dotenv/config.js'
+import './config/database.js'
 import path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
+import indexRouter from './routes/index.js'
+import usersRouter from './routes/users.js'
+import { __dirname } from './utils.js'
 
-import indexRouter from './routes/index'
-import usersRouter from './routes/users'
-
-let app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
